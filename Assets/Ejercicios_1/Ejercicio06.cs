@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ejercicio06 : MonoBehaviour
+namespace Ejercicios_1
 {
-    public GameObject objeto;
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que genere dos esferas al inicio separadas 100 metros
+    /// </summary>
+    public class Ejercicio06 : MonoBehaviour
     {
-        GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
-        if (objeto == null)
+        void Start()
         {
-            objeto = GameObject.Find("Sphere");
-           
-            objeto.transform.position = new Vector3(100, 0, 0);
+            GameObject esfera1 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            GameObject esfera2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            esfera2.transform.position = new Vector3(100f, 0, 0);
         }
-
     }
-
 }

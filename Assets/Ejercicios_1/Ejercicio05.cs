@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ejercicio05 : MonoBehaviour
+namespace Ejercicios_1
 {
-    public GameObject objeto;
-    public GameObject[] go;
-    void Start()
+    /// <summary>
+    /// Crear un script que genere 30 GameObjects al inicio
+    /// </summary>
+    public class Ejercicio05 : MonoBehaviour
     {
-        objeto = GameObject.Find("Cube");
-        for (int i = 0; i<30; i++)
+        public GameObject[] go;
+        void Start()
         {
-            go[i] = objeto;
-        }
-
+            for (int i = 0; i<30; i++)
+            {
+                go[i] = new GameObject();
+            }
+        } 
     }
-
-  
 }

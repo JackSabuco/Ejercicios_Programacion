@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ejercicio10 : MonoBehaviour
+namespace Ejercicios_1
 {
-    GameObject objeto;
-    public GameObject[] go;
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Crear un script que cambie el nombre de todos los GameObjects de la escena en base a un atributo definido en este
+    /// </summary>
+    public class Ejercicio10 : MonoBehaviour
     {
-        for (int i = 0; i < 10; i++)
+        public string nombre;
+        
+        void Start()
         {
-            objeto = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            objeto.transform.position = new Vector3(5 * i, 0, 0);
-            objeto.name = "Cube" + i;
-            go[i] = objeto;
-        }
+            GameObject[] todos = GameObject.FindObjectsOfType<GameObject>();
+            foreach(GameObject go in todos) {
+                go.name = nombre;
+            }
+        }        
     }
-
-    
 }
